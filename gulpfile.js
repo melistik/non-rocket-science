@@ -12,15 +12,24 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     watch = require('gulp-watch'),
     browserSync = require('browser-sync'),
+    ghPages = require('gulp-gh-pages'),
     _ = require('lodash');
 
-gulp.task('default', function () {
+gulp.task('default', function (callback) {
 
-    return runSequence('clean',
+    runSequence('build',
+        'watch',
+        'browserSync',
+        callback);
+
+});
+
+gulp.task('build', function (callback) {
+
+    runSequence('clean',
         ['copy', 'handlebars', 'uglify:aboveTheFold', 'uglify:finishing'],
         'less',
-        'watch',
-        'browserSync');
+        callback);
 
 });
 
@@ -54,7 +63,7 @@ gulp.task('handlebars', function () {
 gulp.task('less', ['bower'], function () {
     return gulp.src('./src/assets/css/design.less')
         .pipe(less())
-        .pipe(uncss({ html: ['./build/*.html'], ignore: [ /(progress|chart|tooltip|popover|scrollUp|nonrocketico)+.*/ ] }))
+        .pipe(uncss({html: ['./build/*.html'], ignore: [/(progress|chart|tooltip|popover|scrollUp|nonrocketico)+.*/]}))
         .pipe(minifyCss({compatibility: 'ie8'}))
         .pipe(gulp.dest('./build/css'))
         .pipe(browserSync.reload({stream: true}));
@@ -62,7 +71,7 @@ gulp.task('less', ['bower'], function () {
 
 gulp.task('uglify:aboveTheFold', function () {
     return gulp.src(['./bower_components/jquery/dist/jquery.js', './bower_components/bootstrap/dist/js/bootstrap.js', './bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.js',
-                     './src/assets/js/aboveTheFold.js'])
+        './src/assets/js/aboveTheFold.js'])
         .pipe(uglify({compress: true}))
         .pipe(concat('aboveTheFold.js'))
         .pipe(gulp.dest('./build/js'))
@@ -84,16 +93,16 @@ gulp.task('bower', function () {
 });
 
 gulp.task('watch', function () {
-    watch(['./src/**.hbs', './src/data/**/*.js', './src/handlebars/**/*.js', './src/partials/**/*.hbs'], function() {
+    watch(['./src/**.hbs', './src/data/**/*.js', './src/handlebars/**/*.js', './src/partials/**/*.hbs'], function () {
         gulp.run('handlebars');
     });
-    watch(['./src/assets/css/**/*.less'], function() {
+    watch(['./src/assets/css/**/*.less'], function () {
         gulp.run('less');
     });
-    watch(['./src/assets/js/aboveTheFold.js'], function() {
+    watch(['./src/assets/js/aboveTheFold.js'], function () {
         gulp.run('uglify:aboveTheFold');
     });
-    watch(['./src/assets/js/finishing.js'], function() {
+    watch(['./src/assets/js/finishing.js'], function () {
         gulp.run('uglify:finishing');
     });
 });
@@ -112,4 +121,9 @@ gulp.task('clean', function () {
 gulp.task('copy', function () {
     return gulp.src(['./src/assets/**', '!./src/assets/{css,js}{,/**}'])
         .pipe(gulp.dest('build'));
+});
+
+gulp.task('publish', ['build'], function () {
+    return gulp.src('./build/**/*')
+        .pipe(ghPages());
 });
