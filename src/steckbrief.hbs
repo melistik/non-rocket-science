@@ -1,0 +1,329 @@
+---
+title:          Steckbrief
+description:    Marten Prieß bringt als Wirtschaftsinformatiker aus Hamburg ein umfassendes Knowhow für die Realsierung von Webapplikationen und REST/SOAP-Services mit.
+keyword:        Consulting + Development in Hamburg, Marten Prieß, Java, Spring, Vaadin, AngularJs, PHP
+
+header: { class: "bg-wood small", icon: "icon-100px nonrocketico-book-person" }
+
+topics:
+    -   {
+        title:          "Java",
+        percentage:     90,
+        headerDescription: "Umfangreiche Erfahrungen in",
+        description:    "Spring, JPA, Maven, Vaadin, REST und viele weitere (siehe auch Projekte)"
+        }
+    -   {
+        title:          "UI + UX",
+        percentage:     90,
+        headerDescription: "UserInterfaces & UserExperience",
+        description:    "Ob Vaadin, GWT, Spring-MVC, AngularJs oder plain HTML mit CSS und jQuery"
+        }
+    -   {
+        title:          "PIM + MAM",
+        percentage:     80,
+        headerDescription: "5 Jahre in der Otto-Group",
+        description:    "Maßgeblich an der Entwicklung des bonprix eigenen PIM und MAM involviert."
+        }
+    -   {
+        title:          "Motivation",
+        percentage:     100,
+        headerDescription: "Schnelle Auffassungsgabe",
+        description:    "Ich liebe Herausforderungen! Egal ob Backend- oder Frontend-Entwicklung."
+        }
+
+technologies:
+    -   {
+        title:          "Java",
+        percentage:     90,
+        description:    "über 6 Jahre Berufserfahrung"
+        }
+    -   {
+        title:          "Vaadin + GWT",
+        percentage:     90,
+        description:    "Vaadin 7 Certified Developer"
+        }
+    -   {
+        title:          "UI-Technologien",
+        percentage:     85,
+        description:    "AngularJs, jQuery, Bootstrap, Less..."
+        }
+    -   {
+        title:          "REST + SOAP",
+        percentage:     85,
+        description:    "Spring MVC, RestEasy und Axis2"
+        }
+    -   {
+        title:          "ORM/SQL",
+        percentage:     80,
+        description:    "Hibernate, Spring-Data, MyBatis"
+        }
+    -   {
+        title:          "Spring",
+        percentage:     75,
+        description:    "Spring + Boot + Data + Security + Web"
+        }
+    -   {
+        title:          "Datenbanken",
+        percentage:     75,
+        description:    "Oracle PL/SQL und Datenbank-Modellierung"
+        }
+    -   {
+        title:          "PHP",
+        percentage:     70,
+        description:    "Für den kleineren Hardwarestack"
+        }
+
+---
+{{#extend "layout"}}
+
+    {{#content "content"}}
+
+        <!-- CONTENT -->
+        <div class="container content paper">
+            <!-- profile -->
+
+            <!-- only print -->
+            <div class="row visible-print-block"><h2>Steckbrief: Marten Prieß</h2></div>
+            <!-- /.only print -->
+
+            <div>
+                <div class="row">
+                    <div class="col-sm-3 text-center profile hidden-print">
+                        <img alt="Marten Prieß" class="img-circle img-responsive" src="./images/imgs/mpriess-profil.jpg">
+                        <h3>Marten Prieß</h3>
+                    </div>
+                    <div class="col-sm-4 col-sm-offset-1 ">
+                        <p>Als Diplom Wirtschaftsinformatiker (FH) habe ich in den letzten 5 Jahren primär umfangreiche
+                            Web-Applikationen und Serivces realisiert. Im international tätigen Versandhandelskonzern
+                            bonprix (Otto-Group) habe ich die Entwicklung von
+                            B2B-Systemen als IT-Architekt maßgeblich beeinflusst.</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <p>Neben der Realisierung von REST-Services für z. B. die Medien-Ausleitung konzipierte und entwickelte
+                            ich vor allem zahlreiche technisch anspruchsvolle Plattformen zur Optimierung zahlreicher Abläufe im Konzern.
+                            Selbständig, mit Scrum im Team oder zusammen mit Offshore-Entwicklern konnte ich viele Erfahrungen
+                            sammeln...</p>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="page-header col-sm-8 col-sm-offset-2">
+                        <div class="titl">
+                            <div class="icon icon-50px nonrocketico-arrow-relations"></div>
+                            <h2>Kernthemen</h2>
+                            <h4><em>das zeichnet mich besonders aus</em></h4>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-sm-offset-3 text-center">
+                        <p>Themengebiete in denen <a href="non-rocket-science.html" class="non-rocket-ref"
+                                                     data-toggle="tooltip" data-placement="top"
+                                                     title="Wofür steht der Name?">Non-Rocket-Science</a> besondere
+                            Expertise besitzt und das Knowhow für Ihre
+                            Projekte einbringen kann.
+                        </p>
+
+                        <p class="small-info hidden-print">Durch Maushover über die Buttons erhalten Sie kurze Zusatzinfos...</p>
+                    </div>
+                </div>
+
+
+                <!-- only print -->
+                <div class="row text-center visible-print-block">
+                    <ul>
+                    {{#each topics}}
+                        <li><h3>{{title}} ({{percentage}}%)</h3>
+                            <p>{{description}}</p>
+                        </li>
+                    {{/each}}
+                    </ul>
+                </div>
+                <!-- /.only print -->
+
+                <div class="row inforow text-center hidden-print">
+                    {{#each topics}}
+                        <div class="col-md-3 col-sm-6">
+                            <div class="chart" data-percent="{{percentage}}">
+                                <div class="percent"></div>
+                            </div>
+                            <p><a href="#" tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover"
+                                  data-trigger="hover" data-placement="top" title="{{headerDescription}}"
+                                  data-content="{{description}}">{{title}}</a>
+                            </p>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTAINER: history -->
+        <div class="container history text-center">
+            <h2 class="black">Lebenslauf in Kürze</h2>
+
+            <!-- only print -->
+            <div class="row visible-print-block">
+                <ul>
+                    <li><h3>Freelancer mit Non-Rocket-Science</h3>
+                        <h5>April 2015</h5>
+                    </li>
+                    <li><h3>IT-Architekt bei bonprix</h3>
+                        <h5>März 2014, bis März 2015</h5>
+
+                        <p>Fachliche Führung von 5 Entwicklern sowie Planung und Umsetzung der langfristigen Softwarearchitektur.
+                            Entwicklung und Bereitstellung von Basistechnologien für die Inhouse- und Offshore-Entwicklung.
+                            Sowie als Innovations- und Technologiescout tätig.</p>
+                    </li>
+                    <li><h3>Technischer Projektmanager bei bonprix</h3>
+                        <h5>September 2009, bis März 2014</h5>
+
+                        <p>Entwicklung und Konzeption von Webapplikationen. Betreuung und Umsetzung von
+                            zentralen
+                            Komponenten, Webschnittstellen und Datawarehouses.</p>
+                    </li>
+                    <li><h3>duales Studium - Diplom Wirtschaftsinformatik (FH)</h3>
+                        <h5>September 2005, bis September 2009</h5>
+
+                        <p>Kombination von Studium und Anstellung bei bonprix.
+                            Mitartbeit in zahlreichen Bereichen (IT-Bereiche, E-Commerce, Einkauf, Marketing) des Versandhändlers.</p>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.only print -->
+            <div class="hidden-print">
+                <!-- year -->
+                <div class="row vline firstrow">
+                    <div class="col-md-4 col-md-offset-4 text-center">
+                        <div class="year color">2015</div>
+                        <h5>April</h5>
+
+                        <p>Beginn der Freelancer-Tätigkeit als <br>
+                            <b>Senior Software Developer</b><br> mit
+                            <a href="non-rocket-science.html">Non-Rocket-Science</a>.</p>
+                    </div>
+                </div>
+
+                <!-- year -->
+                <div class="row vline">
+                    <div class="col-md-2 col-md-offset-5 text-center">
+                        <div class="year">2014</div>
+                        <h5>März</h5>
+                    </div>
+                    <div class="col-md-4 text-left">
+                        <h3>IT-Architekt</h3>
+                        <h5>bei bonprix Handelsgesellschaft mbH</h5>
+
+                        <p><em>bis März 2015,</em> Fachliche Führung von 5 Entwicklern sowie Planung und Umsetzung der langfristigen Softwarearchitektur.
+                            Entwicklung und Bereitstellung von Basistechnologien für die Inhouse- und Offshore-Entwicklung.
+                            Sowie als Innovations- und Technologiescout tätig.</p>
+                    </div>
+                </div>
+
+                <!-- year -->
+                <div class="row vline">
+                    <div class="col-md-4 col-md-offset-1 text-right">
+                        <h3>Technischer Projektmanager</h3>
+                        <h5>bei bonprix Handelsgesellschaft mbH</h5>
+
+                        <p><em>bis März 2014,</em> Entwicklung und Konzeption von Webapplikationen. Betreuung und Umsetzung von
+                            zentralen Komponenten, Webschnittstellen und Datawarehouses.</p>
+                    </div>
+                    <div class="col-md-2 text-center">
+                        <div class="year">2009</div>
+                        <h5>September</h5>
+                    </div>
+                </div>
+
+                <!-- year -->
+                <div class="row vline">
+                    <div class="col-md-2 col-md-offset-5 text-center">
+                        <div class="year">2005</div>
+                        <h5>September</h5>
+                    </div>
+                    <div class="col-md-4 text-left">
+                        <h3>duales Studium - Diplom Wirtschaftsinformatik (FH)</h3>
+                        <h5>bei bonprix Handelsgesellschaft mbH</h5>
+
+                        <p><em>bis September 2009,</em> Kombination von Studium und Ausbildung bei bonprix. Mitarbeit in zahlreichen Bereichen
+                            (IT-Bereiche, E-Commerce, Einkauf, Marketing) des Versandhändlers.</p>
+                    </div>
+                </div>
+
+                <!-- year -->
+                <div class="row">
+                    <div class="col-md-2 col-md-offset-5 text-center">
+                        <div class="year color">1986<br>…</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+        <!-- Technology -->
+        <div class="overlay medium-size hidden-print">
+            <div class="bg bg-technology_cloud_parallax" data-100-top="background-position: 50% 60%" data-400-bottom="background-position: 50% 0%"><p class="hidden">Java,
+                ElasticSearch, SOAP, REST, RestEasy, MyBatis, AspectJ, inDesign, Comet, Maven, Spring, JPA, PL/SQL, Spring
+                MVC, Oracle, Spring Security, Datamodell, jQuery, Datawarehouse, Vaadin, GWT, Spring Data, Hibernate, JaxB,
+                MAM, PIM, E-Commerce, Versandhandel</p></div>
+        </div>
+        <!-- /.technology -->
+
+        <div class="container content paper">
+
+            <!-- framework listings -->
+            <div>
+                <div class="row">
+                    <div class="text-center">
+                        <h2>Technologie-Überblick im Detail</h2>
+
+                        <p>Nachfolgend werden die vorrangig verwendeten Technologien und meine Erfahrung darin aufgelistet.<br>
+                            Je weiter der Balken nach rechts ausschlägt, desto mehr Knowhow ist bereits vorhanden.</p>
+                    </div>
+                </div>
+
+                <!-- only print -->
+                <div class="row visible-print-block">
+                    <ul>
+                        {{#each technologies}}
+                            <li><h3>{{title}} ({{percentage}}%)</h3>
+                                <p>{{description}}</p>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <!-- /.only print -->
+
+                <div class="hidden-print">
+                    <div class="progresses col-md-offset-1 col-md-10">
+                        {{#each technologies}}
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h3>{{title}}</h3>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="num-line pull-left">
+                                        <ins>{{description}}</ins>
+                                    </div>
+                                    <div class="num">
+                                        <ins data-num="{{percentage}}" data-increment="1">0</ins> %
+                                    </div>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            <!-- /.framework listings -->
+        </div>
+
+
+        <div class="highlight darker hidden-print">
+            <div class="container">
+                <div class="row text-center">
+                    <p class="lead">Siehe auch meine <a href="projekte.html">Projekte</a></p>
+                </div>
+            </div>
+        </div>
+    {{/content}}
+
+{{/extend}}

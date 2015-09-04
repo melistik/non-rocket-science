@@ -1,0 +1,392 @@
+// Load fonts
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300|Droid+Serif|Montserrat:400,700|Roboto+Slab:100,400,300,700);
+
+// Global Components
+body {
+  overflow-x: hidden;
+  .body-font;
+}
+
+.text-muted {
+  color: @gray;
+}
+
+.text-primary {
+  color: @brand-primary;
+}
+
+a {
+  -webkit-transition: color .3s ease,
+  background .3s ease, opacity .3s ease;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+  outline: none;
+  text-underline: none;
+  text-decoration: none;
+}
+
+a {
+  color: @brand-primary;
+}
+
+a:hover {
+  color: @brand-primary !important;
+}
+
+a:hover,
+a:focus,
+a:active,
+a.active {
+  color: darken(@brand-primary, 10%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  .heading-font;
+  font-weight: 700;
+}
+
+.img-centered {
+  margin: 0 auto;
+}
+
+.bg-light-gray {
+  background-color: @gray-lighter;
+}
+
+.bg-darkest-gray {
+  background-color: @gray-darkest;
+}
+
+.color {
+  color: @brand-primary;
+}
+
+p {
+  margin-bottom: 20px;
+
+  &.small-info {
+    font-size: 0.8em;
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+}
+
+.content-wrapper .container {
+  padding: 55px 0;
+}
+
+.content {
+  @media (max-width: 768px) {
+    .row {
+      margin: 0 15px;
+    }
+  }
+}
+
+ul, ol {
+  margin-bottom: 30px;
+  list-style: none;
+}
+
+h1 {
+  font-size: 42px;
+  margin: 0 0 20px;
+  font-weight: 300;
+  line-height: 44px;
+}
+
+h2 {
+  font-size: 30px;
+  letter-spacing: -2px;
+  margin: 0 0 10px;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  margin: 0 0 20px;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 300;
+  margin: 0 0 20px;
+}
+
+.light {
+  font-weight: 300 !important;
+}
+
+.normal {
+  font-weight: 400 !important;
+}
+
+.strong {
+  font-weight: 500 !important;
+}
+
+// Highlight
+
+.highlight.night {
+  background-color: #252525;
+}
+
+.highlight.darker {
+  background-color: #F2F2F2;
+}
+
+.highlight {
+  .container {
+    padding: 75px 0;
+  }
+  p.lead {
+    margin-bottom: 0;
+    font-size: 21px !important;
+  }
+}
+
+.content {
+  .highlight:first-child {
+    margin-bottom: 45px;
+  }
+  > :last-child {
+    margin-bottom: 0;
+  }
+  [class*=col] ul li {
+    padding-left: 39px;
+    position: relative;
+  }
+  [class*=col] ul li:before {
+    position: relative;
+    left: -17px;
+    top: -3px;
+    background-color: #4D4D4D;
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    content: '\0020';
+    display: inline-block;
+  }
+}
+
+// Restyled Primary Buttons
+
+.btn-primary {
+  .button-variant(white; @brand-primary; @brand-primary);
+  .heading-font;
+  font-weight: 700;
+}
+
+.btn-xl {
+  .button-variant(white; @brand-primary; @brand-primary);
+  .heading-font;
+  font-weight: 700;
+  border-radius: 3px;
+  font-size: 18px;
+  padding: 20px 40px;
+}
+
+// Header Details
+
+header {
+  background-repeat: none;
+  background-attachment: scroll;
+  background-position: center center;
+  .background-cover;
+  text-align: center;
+  color: white;
+
+  .intro-text {
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    .icon {
+      line-height: 1;
+    }
+    h1.huge {
+      margin-top: 0;
+    }
+    .intro-lead-in {
+      .serif-font;
+      font-style: italic;
+      font-size: 22px;
+      line-height: 22px;
+      margin-bottom: 25px;
+    }
+    .intro-heading {
+      .heading-font;
+      font-weight: 700;
+      font-size: 50px;
+      line-height: 50px;
+      margin-bottom: 25px;
+    }
+  }
+  &.small {
+    .intro-text {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .intro-text {
+      padding-top: 60px;
+      padding-bottom: 50px;
+      .intro-lead-in {
+        font-size: 40px;
+        line-height: 40px;
+        margin-bottom: 25px;
+      }
+      .intro-heading {
+        font-size: 75px;
+        line-height: 75px;
+        margin-bottom: 50px;
+      }
+    }
+
+    &.small {
+      .intro-text {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+    }
+  }
+}
+
+// Global Section Styles
+
+section {
+  padding: 100px 0;
+  h2.section-heading {
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  h3.section-subheading {
+    font-size: 16px;
+    .serif-font;
+    text-transform: none;
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 75px;
+  }
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 150px 0;
+  }
+}
+
+// projects
+
+.vacancy-row {
+
+  span.technology {
+    background: #e1e1e1;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    line-height: 40px;
+    white-space: nowrap;
+  }
+
+  &.darker span.technology {
+    background: #fff;
+  }
+
+}
+
+// scrollup
+#scrollUp {
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  left: 45px;
+  bottom: 45px;
+  font-size: 50px;
+  text-align: center;
+  color: @gray;
+
+  &:before {
+    border-radius: 3px;
+    background-color: #808080;
+    opacity: .2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '\0020';
+    display: block;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+    z-index: -1;
+    margin-top: -15px;
+  }
+
+}
+
+// page-header
+
+.page-header {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 35px;
+  position: relative;
+  border: 0;
+  padding: 0;
+}
+
+.page-header:before {
+  height: 1px;
+  border: 0;
+  background-color: #D6D6D6;
+  overflow: hidden;
+  width: 100%;
+  clear: both;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  content: '\0020';
+  font-size: 1px;
+  margin: auto;
+}
+
+.page-header > * {
+  background-color: #fff;
+  display: inline-block;
+  margin: 0;
+  padding: 0 25px;
+  position: relative;
+}
+
+.page-header * + .btn {
+  margin-top: 10px;
+}
+
+.page-header h1:last-child,
+.page-header h2:last-child,
+.page-header h3:last-child,
+.page-header h4:last-child,
+.page-header h5:last-child,
+.page-header h6:last-child {
+  margin-bottom: 0;
+}
+
+.page-header .titl {
+  padding: 0 30px;
+}
+
+.page-header .icon {
+  margin-bottom: 10px;
+}

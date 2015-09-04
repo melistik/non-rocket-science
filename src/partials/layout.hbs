@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    <title>{{ root.mainTitle }} &middot; {{ title }}</title>
+    <meta name="description" content="{{ description }}">
+    <meta name="keywords" content="{{ keywords }}">
+
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="css/design.css" rel="stylesheet">
+    <script src="js/aboveTheFold.js"></script>
+</head>
+<body>
+
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
+
+<!-- WRAPPER -->
+<div class="wrapper">
+
+    {{#block "navigation"}}
+        {{> navigation }}
+    {{/block}}
+
+    <div class="content-wrapper">
+
+        <!-- Header -->
+        <header class="{{header.class}}" data-0-top="background-position: 50% 50%"
+                data-0-bottom="background-position: 50% 0%">
+            <div class="container">
+                <div class="intro-text">
+                    <div class="icon {{header.icon}}"></div>
+                    <h1 class="huge">{{ title }}</h1>
+                </div>
+            </div>
+        </header>
+        <!-- /.Header -->
+
+        {{#block "content"}}
+        {{/block}}
+    </div>
+
+</div>
+<!-- /.wrapper -->
+
+{{#block "footer"}}
+    {{> footer }}
+{{/block}}
+
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-56268068-1', 'auto');
+    ga('require', 'linkid', 'linkid.js');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+</script>
+</body>
+</html>

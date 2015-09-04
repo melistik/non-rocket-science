@@ -1,0 +1,60 @@
+.bg-keyboard {
+  background-image: url(../images/bg/keyboard.jpg);
+}
+
+.bg-leafs {
+  background-image: url(../images/bg/leafs.jpg);
+}
+
+.bg-wood {
+  background-image: url(../images/bg/wood.jpg);
+}
+
+.bg-paper {
+  background-image: url(../images/bg/paper.jpg);
+}
+
+.bg-wall {
+  background-image: url(../images/bg/wall.jpg);
+}
+
+.bg-technology_cloud {
+  background-image: url(../images/bg/technology_cloud.jpg);
+}
+
+.bg-technology_cloud_parallax {
+  background-image: url(../images/bg/technology_cloud_parallax.jpg);
+}
+
+// Layout
+
+div.technology {
+  height: 600px;
+  position: relative;
+}
+
+.bg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  content: '\0020';
+  background-position: 50% 50%;
+}
+
+.overlay {
+  &.medium-size {
+    height: 310px;
+  }
+  &.big-padding {
+    padding: 120px 0 !important;
+  }
+}
+
+div.technology:hover:after {
+  opacity: 0.05;
+  transition: opacity 1s ease-out;
+  -moz-transition: opacity 1s ease-out;
+  -webkit-transition: opacity 1s ease-out;
+  -o-transition: opacity 1s ease-out;
+}
