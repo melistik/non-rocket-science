@@ -22,16 +22,7 @@
   background-image: url(../images/bg/technology_cloud.jpg);
 }
 
-.bg-technology_cloud_parallax {
-  background-image: url(../images/bg/technology_cloud_parallax.jpg);
-}
-
 // Layout
-
-div.technology {
-  height: 600px;
-  position: relative;
-}
 
 .bg {
   background-size: cover;
@@ -51,10 +42,21 @@ div.technology {
   }
 }
 
-div.technology:hover:after {
-  opacity: 0.05;
-  transition: opacity 1s ease-out;
-  -moz-transition: opacity 1s ease-out;
-  -webkit-transition: opacity 1s ease-out;
-  -o-transition: opacity 1s ease-out;
+.technology {
+
+  &:before {
+    opacity: 0.1;
+    background: #000;
+    height: 310px;
+    width: 100%;
+    content: " ";
+    position: absolute;
+    transition: opacity 1s ease-out;
+    -moz-transition: opacity 1s ease-out;
+    -webkit-transition: opacity 1s ease-out;
+    -o-transition: opacity 1s ease-out;
+  }
+  &:hover:before {
+    opacity: 0.01;
+  }
 }
