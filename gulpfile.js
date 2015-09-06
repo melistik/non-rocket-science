@@ -131,7 +131,7 @@ gulp.task('clean', function () {
 });
 
 gulp.task('copy', function () {
-    return gulp.src(['./src/assets/**', '!./src/assets/{css,js}{,/**}'])
+    return gulp.src(['./src/assets/**', '!./src/assets/{css,js}{,/**}', './CNAME'])
         .pipe(gulp.dest('build'));
 });
 
