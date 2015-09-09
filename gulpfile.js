@@ -75,7 +75,7 @@ gulp.task('handlebars', function () {
 gulp.task('less', ['bower'], function () {
     return gulp.src('./src/assets/css/design.less')
         .pipe(less())
-        .pipe(uncss({html: ['./build/*.html'], ignore: [/(progress|chart|tooltip|popover|scrollUp|nonrocketico)+.*/]}))
+        .pipe(uncss({html: ['./build/*.html'], ignore: [/(progress|chart|tooltip|popover|scrollUp|nonrocketico|collapse|collapsing|nav|btn)+.*/]}))
         .pipe(minifyCss({compatibility: 'ie8'}))
         .pipe(gulp.dest('./build/css'))
         .pipe(browserSync.reload({stream: true}));

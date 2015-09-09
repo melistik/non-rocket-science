@@ -13,7 +13,7 @@
             navbarContact.removeClass('hidden');
         });
 
-    skrollr.init();
+    skrollr.init({forceHeight: false});
 
     $.scrollUp({
         animation: 'fade',
