@@ -12,7 +12,6 @@
     "bootstrap": "~3.3.5",
     "scrollup": "~2.4.1",
     "jquery.easy-pie-chart": "~2.1.6",
-    "jquery-sticky": "~1.0.1",
-    "skrollr": "~0.6.30"
+    "jquery-sticky": "~1.0.1"
   }
 }

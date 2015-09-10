@@ -91,7 +91,7 @@ gulp.task('uglify:aboveTheFold', function () {
 });
 
 gulp.task('uglify:finishing', function () {
-    return gulp.src(['./bower_components/skrollr/dist/skrollr.min.js', './bower_components/scrollup/dist/jquery.scrollUp.js', './bower_components/jquery-sticky/jquery.sticky.js',
+    return gulp.src(['./bower_components/scrollup/dist/jquery.scrollUp.js', './bower_components/jquery-sticky/jquery.sticky.js',
         './src/assets/js/finishing.js'])
         .pipe(uglify({compress: true}))
         .pipe(concat('finishing.js'))

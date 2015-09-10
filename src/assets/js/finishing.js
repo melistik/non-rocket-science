@@ -13,8 +13,6 @@
             navbarContact.removeClass('hidden');
         });
 
-    skrollr.init({forceHeight: false});
-
     $.scrollUp({
         animation: 'fade',
         scrollDistance: 400,
