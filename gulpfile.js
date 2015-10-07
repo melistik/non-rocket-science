@@ -82,7 +82,7 @@ gulp.task('less', ['bower'], function () {
 });
 
 gulp.task('uglify:aboveTheFold', function () {
-    return gulp.src(['./bower_components/jquery/dist/jquery.js', './bower_components/bootstrap/dist/js/bootstrap.js', './bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.js',
+    return gulp.src(['./src/assets/js/modernizr-custom.js', './bower_components/jquery/dist/jquery.js', './bower_components/bootstrap/dist/js/bootstrap.js', './bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.js',
         './src/assets/js/aboveTheFold.js'])
         .pipe(uglify({compress: true}))
         .pipe(concat('aboveTheFold.js'))

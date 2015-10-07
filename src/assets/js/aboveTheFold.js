@@ -5,11 +5,9 @@
     };
 
 
-    var fNum = function () {
-        var num = $('[data-num]'),
-            skillLine = $('.progresses'),
-            numbS;
+    var num, skillLine, numbS;
 
+    var fNum = function () {
         if (num.length > 0) {
 
             num.parent().each(function () {
@@ -62,8 +60,9 @@
         }
     };
 
+    var histEvent = null;
+
     var histLine = function () {
-        var histEvent = $('.history').find('.row');
         if (histEvent.length > 0) {
             histEvent.each(function () {
                 var self = $(this),
@@ -76,8 +75,8 @@
         }
     };
 
+    var chartEvent = null;
     var loadChart = function () {
-        var chartEvent = $('.chart');
         if (chartEvent.length > 0) {
             chartEvent.each(function () {
                 var self = $(this),
@@ -100,9 +99,30 @@
                 }
             });
         }
-    }
+    };
+
+    function debounce(func, wait, immediate) {
+        var timeout;
+        return function() {
+            var context = this, args = arguments;
+            var later = function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
+    };
 
     $(window).load(function () {
+        histEvent = $('.history').find('.row');
+        chartEvent = $('.chart');
+        num = $('[data-num]'),
+            skillLine = $('.progresses'),
+            numbS;
+
         $('#preloader').delay(defaults.speedAnimation)
             .fadeOut(defaults.speedAnimation / 2);
 
@@ -117,14 +137,20 @@
         $('[data-toggle="tooltip"]').tooltip();
 
 
+        // TODO: Modernizr.touchevents check
+
         fNum();
         histLine();
         loadChart();
-        $(window).scroll(function () {  // onScroll function
+
+        var scrollHandler = function () {  // onScroll function
+            console.count("scroll");
             histLine();
             fNum();
             loadChart();
-        });
+        };
+
+        $(window).scroll(debounce(scrollHandler, 50));
 
 
         $('body').append('<script src="js/finishing.js" async></script>');
