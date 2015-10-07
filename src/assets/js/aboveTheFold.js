@@ -144,13 +144,12 @@
         loadChart();
 
         var scrollHandler = function () {  // onScroll function
-            console.count("scroll");
             histLine();
             fNum();
             loadChart();
         };
 
-        $(window).scroll(debounce(scrollHandler, 50));
+        $(window).scroll(debounce(scrollHandler, 10));
 
 
         $('body').append('<script src="js/finishing.js" async></script>');
