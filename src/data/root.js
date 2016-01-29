@@ -3,5 +3,6 @@
 module.exports = {
     mainTitle: 'Marten Prieß',
     pkg: require('../../package.json'),
-    buildDate: new Date()
+    buildDate: new Date(),
+    companyTitle: 'Non-Rocket-Science'
 };

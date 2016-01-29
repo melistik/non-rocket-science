@@ -4,9 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-    <title>{{ root.mainTitle }} &middot; {{ title }}</title>
+    <title>{{ title }} &middot; {{ companyTitle }}</title>
     <meta name="description" content="{{ description }}">
     <meta name="keywords" content="{{ keywords }}">
+
+    <meta property="og:title" content="{{ ogTitle }}">
+    <meta property="og:site_name" content="{{ root.companyTitle }}">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:image" content="http://www.non-rocket-science.com/images/nonrocketscience-og.jpg"/>
+    <meta property="og:image:type" content="image/jpeg"/>
+    <meta property="og:image:width" content="300"/>
+    <meta property="og:image:height" content="300"/>
 
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link href="css/design.css?v={{formatDate root.buildDate "yyyymmddHHMMss"}}" rel="stylesheet">
