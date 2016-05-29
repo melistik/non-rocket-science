@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-    <title>{{ title }} &middot; {{ companyTitle }}</title>
+    <title>{{ title }} &middot; {{ root.companyTitle }}</title>
     <meta name="description" content="{{ description }}">
     <meta name="keywords" content="{{ keywords }}">
 
@@ -58,6 +58,20 @@
 {{#block "footer"}}
     {{> footer }}
 {{/block}}
+
+
+<div class="eupopup-container">
+    <div class="eupopup-head">Wir verwenden Cookies.</div>
+    <div class="eupopup-body">
+        <span class="init">Cookies helfen unsere Webseite zu verbessern und individuelel Inhalte auszuspielen. </span>
+        <span class="short">Mit Verwendung der Webseite stimmst du dieser Nutzung zu. Danke!</span>
+    </div>
+    <div class="eupopup-buttons">
+        <a href="#" class="eupopup-button eupopup-ok">Ok</a>
+        <div class="clearfix"></div>
+    </div>
+    <a href="#" class="eupopup-button eupopup-close"><i class="nonrocketico-checkbox-no"></i></a>
+</div>
 
 
 <script>

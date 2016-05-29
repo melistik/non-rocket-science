@@ -56,6 +56,7 @@ gulp.task('handlebars', function () {
                 _.assign(context, file.frontMatter);
                 // add file meta information to context
                 context.fileAttr = {mtime: file.stat.mtime, shortPath: file.path.replace(file.cwd, '')};
+
                 return context;
             }
         }))
@@ -114,14 +115,15 @@ gulp.task('watch', function () {
     watch(['./src/assets/js/aboveTheFold.js'], function () {
         gulp.run('uglify:aboveTheFold');
     });
-    watch(['./src/assets/js/finishing.js'], function () {
+    watch(['./src/assets/js/component/*.js', './src/assets/js/finishing.js'], function () {
         gulp.run('uglify:finishing');
     });
 });
 
 gulp.task('browserSync', function () {
     return browserSync.init({
-        server: "./build"
+        server: "./build",
+        open: false
     });
 });
 
