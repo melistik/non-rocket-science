@@ -9,9 +9,9 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.3.5",
+    "bootstrap": "~3.3.7",
     "scrollup": "~2.4.1",
     "jquery.easy-pie-chart": "~2.1.6",
-    "jquery-sticky": "~1.0.1"
+    "jquery-sticky": "~1.0.4"
   }
 }
