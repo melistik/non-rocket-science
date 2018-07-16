@@ -123,7 +123,7 @@
     };
   };
 
-  $(window).load(function() {
+  $(window).on('load',function() {
     histEvent = $('.history').find('.row');
     chartEvent = $('.chart');
     num = $('[data-num]'),

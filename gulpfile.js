@@ -76,7 +76,7 @@ gulp.task('handlebars', function () {
 gulp.task('less', ['bower'], function () {
     return gulp.src('./src/assets/css/design.less')
         .pipe(less())
-        .pipe(uncss({html: ['./build/*.html'], ignore: [/(progress|chart|tooltip|popover|scrollUp|nonrocketico|collapse|collapsing|nav|btn)+.*/]}))
+        .pipe(uncss({html: ['./build/*.html'], ignore: [/(progress|chart|tooltip|popover|scrollUp|nonrocketico|collapse|collapsing|nav|btn|sticky)+.*/]}))
         .pipe(minifyCss({compatibility: 'ie8'}))
         .pipe(gulp.dest('./build/css'))
         .pipe(browserSync.reload({stream: true}));
@@ -85,7 +85,7 @@ gulp.task('less', ['bower'], function () {
 gulp.task('uglify:aboveTheFold', function () {
     return gulp.src(['./src/assets/js/modernizr-custom.js', './bower_components/jquery/dist/jquery.js', './bower_components/bootstrap/dist/js/bootstrap.js', './bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.js',
         './src/assets/js/aboveTheFold.js'])
-        .pipe(uglify({compress: true}))
+    // .pipe(uglify({compress: true}))
         .pipe(concat('aboveTheFold.js'))
         .pipe(gulp.dest('./build/js'))
         .pipe(browserSync.reload({stream: true}));
