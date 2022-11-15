@@ -16,58 +16,15 @@
     $.scrollUp({
         animation: 'fade',
         scrollDistance: 400,
-        scrollText: '<i class="icon nonrocketico-chevron-up"></i>',
+        scrollText: '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M24 12c0 6.623-5.377 12-12 12s-12-5.377-12-12 5.377-12 12-12 12 5.377 12 12zm-1 0c0 6.071-4.929 11-11 11s-11-4.929-11-11 4.929-11 11-11 11 4.929 11 11zm-11.5-4.828l-3.763 4.608-.737-.679 5-6.101 5 6.112-.753.666-3.747-4.604v11.826h-1v-11.828z"/></svg>',
         scrollTitle: 'Scroll to top'
     });
-
-
-
-    // Cookie Banner
-    var COOKIE_NAME = 'EU_COOKIE_LAW_CONSENT', COOKIE_EXPIRES_IN_DAYS = 90;
-
-    // Storing the consent in a cookie
-    var setUserAcceptsCookies = function(consent) {
-        var d = new Date();
-        var expiresInDays = COOKIE_EXPIRES_IN_DAYS * 24 * 60 * 60 * 1000;
-        d.setTime( d.getTime() + expiresInDays );
-        var expires = "expires=" + d.toGMTString();
-        document.cookie = COOKIE_NAME + '=' + consent + "; " + expires + ";path=/";
-    };
-
-    // Let's see if we have a consent cookie already
-    var userAlreadyAcceptedCookies = function() {
-        var userAcceptedCookies = false;
-        var cookies = document.cookie.split(";");
-        for (var i = 0; i < cookies.length; i++) {
-            var c = cookies[i].trim();
-            if (c.indexOf(COOKIE_NAME) == 0) {
-                userAcceptedCookies = c.substring(COOKIE_NAME.length + 1, c.length);
-            }
-        }
-
-        return userAcceptedCookies;
-    };
-
-    var hideContainer = function() {
-        $('.eupopup-container').animate({
-            opacity: 0,
-            height: 0
-        }, 200, function() {
-            $('.eupopup-container').hide(0);
-        });
-    };
 
     $(document).ready(function() {
         // No need to display this if user already accepted the policy
         if (userAlreadyAcceptedCookies()) {
             return;
         }
-
-        $('.eupopup-button').click(function() {
-            setUserAcceptsCookies(true);
-            hideContainer();
-            return false;
-        });
 
         // Ready to start!
         $('.eupopup-container').show();
